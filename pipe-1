@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout from sir repo') {
+            steps {
+                git 'https://github.com/Pritam-Khergade/student-ui.git'
+            }
+        }
+        stage('install and build maven') {
+            steps {
+                sh 'apt update && apt install maven -y'
+                
+            }
+        }
+    }
+}
